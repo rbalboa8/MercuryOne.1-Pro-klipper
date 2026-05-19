@@ -1,7 +1,7 @@
 sudo service klipper stop
 cd ~/klipper
 
-make clean KCONFIG_CONFIG=btt_skr_mini_e3_v1.2_klipper.config
+make clean KCONFIG_CONFIG=btt_skr_e3_turbo_klipper.config
 make menuconfig KCONFIG_CONFIG=btt_skr_e3_turbo_klipper.config
 make -j4 KCONFIG_CONFIG=btt_skr_e3_turbo_klipper.config
 read -p "SKR E3 Turbo firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
