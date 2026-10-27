@@ -1,6 +1,14 @@
 sudo service klipper stop
 cd ~/klipper
 
+make clean KCONFIG_CONFIG=btt_skr_3_ez_klipper.config
+make menuconfig KCONFIG_CONFIG=btt_skr_3_ez_klipper.config
+make -j4 KCONFIG_CONFIG=btt_skr_3_ez_klipper.config
+read -p "SKR 3 EZ firmware built, please check above for any errors. Press [Enter] to continue flashing, or [Ctrl+C] to abort"
+
+python3 ~/katapult/scripts/flashtool.py -d /dev/serial/by-id/usb-Klipper_stm32h723xx_36003E001951323034353633-if00
+read -p "SKR 3 EZ firmware flashed, please check above for any errors. Press [Enter] to continue, or [Ctrl+C] to abort"
+
 make clean KCONFIG_CONFIG=orbitool_o2s_klipper.config
 make menuconfig KCONFIG_CONFIG=orbitool_o2s_klipper.config
 make -j4 KCONFIG_CONFIG=orbitool_o2s_klipper.config
