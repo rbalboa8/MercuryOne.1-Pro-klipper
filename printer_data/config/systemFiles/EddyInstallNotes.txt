@@ -1,0 +1,29 @@
+https://www.klipper3d.org/Eddy_Probe.html
+
+1.
+config entry for eddy probe
+
+2.
+LDC_CALIBRATE_DRIVE_CURRENT CHIP=my_eddy_probe
+
+3.
+PROBE_EDDY_CURRENT_CALIBRATE CHIP=my_eddy_probe
+
+4.
+calibrate x & y offsets
+
+5.
+run PROBE_EDDY_CURRENT_CALIBRATE again
+
+6.
+PROBE_EDDY_CURRENT_TAP_CALIBRATE
+
+7.
+Gemini:
+TEMPERATURE_PROBE_CALIBRATE PROBE=btt_eddy TARGET=55 STEP=1
+Klipper referenc:
+TEMPERATURE_PROBE_CALIBRATE PROBE=my_probe TARGET=80
+Demon Eddy Open Frame:
+TEMPERATURE_PROBE_CALIBRATE PROBE=btt_eddy TARGET=56 STEP=4
+Demon Eddy Open Enclosure:
+TEMPERATURE_PROBE_CALIBRATE PROBE=btt_eddy TARGET=70 STEP=5
